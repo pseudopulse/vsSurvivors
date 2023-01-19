@@ -1,7 +1,7 @@
 {
 	"name": "vsSurvivors",
 	"version_number": "1.0.0",
-	"website_url": "",
+	"website_url": "https://github.com/pseudopulse/vsSurvivors",
 	"description": "RoR2, except you control the enemies! Face off against 4 AI controlled survivors and stop them from beating the game. ",
 	"dependencies": [
 		"bbepis-BepInExPack-5.4.9",

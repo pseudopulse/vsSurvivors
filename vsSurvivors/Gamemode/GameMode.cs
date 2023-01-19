@@ -47,10 +47,28 @@ namespace vsSurvivors.Gamemode {
 
             bodyPrefabs = new() {
                 Utils.Paths.GameObject.GolemBody28.Load<GameObject>(),
+                Utils.Paths.GameObject.ClayBody12.Load<GameObject>(),
+                Utils.Paths.GameObject.ParentBody6.Load<GameObject>(),
+                Utils.Paths.GameObject.VagrantBody15.Load<GameObject>(),
+                Utils.Paths.GameObject.VultureBody24.Load<GameObject>(),
+                Utils.Paths.GameObject.ClayBossBody7.Load<GameObject>(),
+                Utils.Paths.GameObject.MagmaWormBody32.Load<GameObject>(),
+                Utils.Paths.GameObject.NullifierBody3.Load<GameObject>(),
+                Utils.Paths.GameObject.FlameDroneBody13.Load<GameObject>(),
                 Utils.Paths.GameObject.GreaterWispBody31.Load<GameObject>(),
                 Utils.Paths.GameObject.BeetleGuardBody31.Load<GameObject>(),
-                Utils.Paths.GameObject.BeetleBody8.Load<GameObject>(),
-                Utils.Paths.GameObject.LemurianBody8.Load<GameObject>()
+                Utils.Paths.GameObject.ClayBruiserBody10.Load<GameObject>(),
+                Utils.Paths.GameObject.ElectricWormBody32.Load<GameObject>(),
+                Utils.Paths.GameObject.VoidMegaCrabBody.Load<GameObject>(),
+                Utils.Paths.GameObject.VoidJailerBody29.Load<GameObject>(),
+                Utils.Paths.GameObject.LemurianBruiserBody8.Load<GameObject>(),
+                Utils.Paths.GameObject.MegaConstructBody12.Load<GameObject>(),
+                Utils.Paths.GameObject.EngiWalkerTurretBody.Load<GameObject>(),
+                Utils.Paths.GameObject.ImpBody10.Load<GameObject>(),
+                Utils.Paths.GameObject.MiniVoidRaidCrabBodyBase.Load<GameObject>(),
+                Utils.Paths.GameObject.ClayBody12.Load<GameObject>(),
+                Utils.Paths.GameObject.ParentBody6.Load<GameObject>(),
+                Utils.Paths.GameObject.VagrantBody15.Load<GameObject>(),
             };
 
             AI.RangerAI.CreateRangerAI();
@@ -114,8 +132,8 @@ namespace vsSurvivors.Gamemode {
 
         private static void Start_CD(On.RoR2.CombatDirector.orig_OnEnable orig, CombatDirector self) {
             orig(self);
-            bodyPrefabs = new();
-            foreach (DirectorCard card in ClassicStageInfo.instance.monsterCards) {
+            //bodyPrefabs = new();
+            /*foreach (DirectorCard card in ClassicStageInfo.instance.monsterCards) {
                 if (card.spawnCard && card.spawnCard.prefab) {
                     // Debug.Log("prefab exists");
                     BodyIndex index = BodyCatalog.FindBodyIndex(card.spawnCard.prefab.GetComponent<CharacterMaster>().bodyPrefab);
@@ -124,7 +142,7 @@ namespace vsSurvivors.Gamemode {
                     }
                     bodyPrefabs.Add(card.spawnCard.prefab.GetComponent<CharacterMaster>().bodyPrefab);
                 }
-            }
+            }*/
         }
 
         private static void PickPlayerAsSpawnTarget_CD(On.RoR2.CombatDirector.orig_PickPlayerAsSpawnTarget orig, CombatDirector self) {
@@ -246,6 +264,10 @@ namespace vsSurvivors.Gamemode {
                             break;
                         case 4:
                             pos = MoonSpawnFour;
+                            break;
+                        default:
+                            pos = MoonSpawnOne;
+                            i = 0;
                             break;
                     }
                     MasterSummon summon = new();
