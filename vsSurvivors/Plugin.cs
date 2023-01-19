@@ -9,7 +9,7 @@ namespace vsSurvivors {
     
     public class vsSurvivors : BaseUnityPlugin {
         public const string PluginGUID = PluginAuthor + "." + PluginName;
-        public const string PluginAuthor = "ModAuthorName";
+        public const string PluginAuthor = "pseudopulse";
         public const string PluginName = "vsSurvivors";
         public const string PluginVersion = "1.0.0";
 
